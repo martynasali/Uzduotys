@@ -15,9 +15,6 @@ function difference($duomenys){
 
 
 function find($duomenys){
-    $result = [];
-    $smallest = INF;
-    $found = false;
     for($i = 0; $i<count($duomenys); $i++){
     for($j = 0; $j<count($duomenys); $j++){
             if($i != $j){
