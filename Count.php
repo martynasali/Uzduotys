@@ -8,8 +8,13 @@ function difference($duomenys){
             if($number - $numbe > 0){
                 $diff[] = $number - $numbe;
             };
+            
         }
-        return array_sum($diff);
+
+        if (count($duomenys) == 0|| count($diff)==0){
+            return;
+        }
+        return (array_sum($diff)/count($diff)/count($duomenys)) ;
 }
 
 
@@ -27,30 +32,26 @@ function find($duomenys){
 
                 
                   if(count($copy)>1){
-                      if($diff==1){
+                      if($diff<0.34 ){
                         foreach($copy as $num){
                             echo $num." ";
                         }  
                         echo "difference: ".$diff;
                         echo "<br/>";
                       }
-                      if($diff==2){
-                        foreach($copy as $num){
-                            echo $num." ";
-                        }  
-                        echo "difference: ".$diff;
-                        echo "<br/>";
-                      }
+                      
                       find($copy);
-                  }}}
-        break;
-                
+                  }
+                }
+            }
+         break;       
     }
 
 }
 
 
 function main($duomenys){
+    // echo difference([10, 10, 11 ]);
 find($duomenys);
 };
 main($duomenys);
